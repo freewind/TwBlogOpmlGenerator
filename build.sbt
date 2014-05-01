@@ -11,3 +11,6 @@ libraryDependencies ++= Seq(
   "org.jsoup" % "jsoup" % "1.7.3"
 )
 
+lazy val generate = taskKey[Unit]("Generate 'tw-blogs.opml' file based on 'blogs.txt' from the root of the project")
+
+fullRunTask(generate, Compile, "tw.freewind.opml.App")
